@@ -1,8 +1,8 @@
 
 require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
+const morgan = require('morgan')
+const cors = require('cors')
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config.js');
 const nRouter = require('./notes/notes-router.js');
