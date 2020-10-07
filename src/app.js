@@ -23,7 +23,15 @@ app.get('/', (req, res) => {
   res.send('Hello, noteful users!');
 });
 
-
+app.use((error, req, res, next) => {
+  let response
+  if (process.env.NODE_ENV === 'production') {
+    response = { error: { message: 'server error editeddd' }}
+  } else {
+    response = { error }
+  }
+  res.status(500).json(response)
+})
 
 
 module.exports = app;
@@ -45,14 +53,6 @@ app.use(function errorHandler(error, req, res, next) {
 
 
 
- app.use((error, req, res, next) => {
-  let response
-  if (process.env.NODE_ENV === 'production') {
-    response = { error: { message: 'server error editeddd' }}
-  } else {
-    response = { error }
-  }
-  res.status(500).json(response)
-})
+
 
  */
