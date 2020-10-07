@@ -1,12 +1,12 @@
   
 require('dotenv').config();
-
+import { NODE_ENV } from './src/config'
 
 
 module.exports = {
   'migrationsDirectory': 'migrations',
   'driver': 'pg',
-  'connectionString': (process.env.NODE_ENV === 'test')
+  'connectionString': (NODE_ENV === 'test')
     ? process.env.TEST_DATABASE_URL
     : process.env.DATABASE_URL,
   'ssl': !!process.env.SSL,
