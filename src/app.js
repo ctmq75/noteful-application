@@ -16,8 +16,8 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 
-app.use('/notes', nRouter);
-app.use('/folders', fRouter);
+app.use('/api/notes', nRouter);
+app.use('/api/folders', fRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, noteful users!');
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 app.use((error, req, res, next) => {
   let response
   if (process.env.NODE_ENV === 'production') {
-    response = { error: { message: 'server error edited' }}
+    response = { error: { message: 'server error editeddd' }}
   } else {
     response = { error }
   }
