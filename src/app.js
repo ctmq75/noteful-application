@@ -23,9 +23,7 @@ app.get('/', (req, res) => {
   res.send('Hello, noteful users!');
 });
 
-app.get('/api/folders', (req, res) => {
-  res.send('fuck you!');
-});
+
 
 app.use((error, req, res, next) => {
   let response
