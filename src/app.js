@@ -11,7 +11,7 @@ const fRouter = require('./folders/folders-router.js');
 
 const app = express();
 
- const morganSetting = NODE_ENV === 'production' ? 'tiny' : 'common'
+ const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
  app.use(morgan(morganSetting))
 app.use(helmet());
 app.use(cors());
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.use((error, req, res, next) => {
   let response
-  if (NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     response = { error: { message: 'server error editeddd' }}
   } else {
     response = { error }
