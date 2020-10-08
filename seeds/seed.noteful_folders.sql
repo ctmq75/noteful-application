@@ -1,5 +1,5 @@
-INSERT INTO noteful_folders ( folder_name )
+INSERT INTO noteful_folders (id, folder_name )
 VALUES 
-  ('Important'),
-  ('Spangley'),
-  ('Forgot the other one');
+  (1,'Important'),
+  (2,'Spangley'),
+  (3,'Forgot the other one');
