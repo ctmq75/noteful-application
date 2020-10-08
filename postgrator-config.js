@@ -2,19 +2,6 @@
 require('dotenv').config();
 import { DATABASE_URL } from './src/config'
 
-
-module.exports = {
-  'migrationsDirectory': 'migrations',
-  'driver': 'pg',
-  'connectionString': process.env.DATABASE_URL,
-  'ssl': !!process.env.SSL,
-  validateChecksums: false,
-};
-
-
-
-
-/*
 module.exports = {
   "migrationDirectory": "migrations",
   "driver": "pg",
@@ -25,4 +12,17 @@ module.exports = {
   "password": process.env.PROD_MIGRATION_DB_PASS,
   "ssl": true
 }
+
+
+
+
+/*
+module.exports = {
+  'migrationsDirectory': 'migrations',
+  'driver': 'pg',
+  'connectionString': process.env.DATABASE_URL,
+  'ssl': !!process.env.SSL,
+  validateChecksums: false,
+};
+
 */
