@@ -6,7 +6,7 @@ import { DATABASE_URL } from './src/config'
 module.exports = {
   'migrationsDirectory': 'migrations',
   'driver': 'pg',
-  'connectionString': DATABASE_URL,
+  'connectionString': process.env.DATABASE_URL,
   'ssl': !!process.env.SSL,
   validateChecksums: false,
 };
